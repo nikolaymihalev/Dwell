@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import localFont from "next/font/local"
 
 const headingFont = localFont({
-    src: "../public/font/woff2"
+    src: "../public/fonts/font.woff2"
 });
 
 export const Logo = () => {
