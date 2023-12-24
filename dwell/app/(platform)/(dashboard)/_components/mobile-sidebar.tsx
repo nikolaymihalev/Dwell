@@ -1,6 +1,8 @@
 "use-client";
 
+import { Button } from "@/components/ui/button";
 import { useMobileSidebar } from "@/hooks/use-mobile-sidebar";
+import { Menu, Sheet} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -14,10 +16,20 @@ export const MobileSidebar = ()=>{
     useEffect(()=>{
         setIsMounted(true);
     },[]);
+
+    useEffect(()=>{
+        onClose();
+    }, [pathname, onClose]);
+
+    if(!isMounted){
+        return null;
+    }
     
     return (
-        <div>
-
-        </div>
+        <>
+            <Button onClick={onOpen} className="block md:hidden" variant="ghost" size="sm">
+                <Menu className="h-4 w-4"/>
+            </Button>
+        </>
     );
 };
