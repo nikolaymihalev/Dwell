@@ -1,13 +1,10 @@
 "use client";
-import { OrganizationSwitcher, } from "@clerk/nextjs";
+import { OrganizationSwitcher } from "@clerk/nextjs";
 
-const OrganizationIdPage = () => {
-    async function create(formData:FormData) {
-        "use server"
-    }
+const OrganizationIdPage = () => {    
     return (
         <div>
-            <form action={create}>
+            <form >
                 <input
                     id="title"
                     name = "title"
