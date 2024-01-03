@@ -2,10 +2,13 @@
 import { create } from "@/actions/create-board";
 import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher } from "@clerk/nextjs";
+import { db } from "@/lib/db";
 
-const OrganizationIdPage = () => {    
+const OrganizationIdPage = async () => {    
+    const boards = await db.board.findMany();
+
     return (
-        <div>
+        <div className="flex flex-col space-y-4">
             <form action = {create}>
                 <input
                     id="title"
@@ -18,6 +21,9 @@ const OrganizationIdPage = () => {
                 Submit
             </Button>
             </form>
+            <div className="space-y-2">
+               
+            </div>
         </div>
     );
 };
