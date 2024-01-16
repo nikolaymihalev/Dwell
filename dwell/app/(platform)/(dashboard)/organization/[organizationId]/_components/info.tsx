@@ -9,7 +9,7 @@ export const Info=() => {
 
     if(!isLoaded){
         return(
-            <p>Loading...</p>
+            <Info.Skeleton/>
         );
     }
 
@@ -40,9 +40,10 @@ Info.Skeleton = function SkeletonInfo(){
             <div className="space-y-2">
                 <Skeleton className="h-10 w-[200px]"/>
                 <div className="flex items-center">
-
+                    <Skeleton className="h-4 w-4 mr-2"/>
+                    <Skeleton className="h-4 w-[100px]"/>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
