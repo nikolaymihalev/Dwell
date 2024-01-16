@@ -3,7 +3,7 @@
 import { createBoard } from "@/actions/create-board";
 import { Button } from "@/components/ui/button";
 import { useFormState } from "react-dom";
-import { FormButton } from "./form-button";
+import { FormSubmit } from "@/components/form/form-submit";
 import { useAction } from "@/hooks/use-action";
 import { FormInput } from "@/components/form/form-input";
 
@@ -26,7 +26,9 @@ export const Form=()=>{
             <div className="flex flex-col space-y-2">            
                 <FormInput id="title" errors={fieldErrors}/>                
             </div>
-            <FormButton/>
+            <FormSubmit>
+                Save
+            </FormSubmit>
         </form>
     )
 }
